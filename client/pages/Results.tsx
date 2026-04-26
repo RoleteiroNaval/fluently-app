@@ -13,11 +13,11 @@ export const RadarReport: React.FC = () => {
   const currentLevel = metrics?.cefr_level || 'B2';
 
   const data = metrics ? [
-    { subject: 'Pronunciation', A: metrics.scores.pronunciation },
-    { subject: 'Vocabulary', A: metrics.scores.vocabulary },
-    { subject: 'Grammar', A: metrics.scores.grammar },
-    { subject: 'Fluency', A: metrics.scores.fluency },
-    { subject: 'Filler Words', A: metrics.scores.filler_words },
+    { subject: 'Pronunciation', A: metrics.pronunciation },
+    { subject: 'Vocabulary', A: metrics.vocabulary },
+    { subject: 'Grammar', A: metrics.grammar },
+    { subject: 'Fluency', A: metrics.fluency },
+    { subject: 'Filler Words', A: metrics.filler_words },
   ] : [
     { subject: 'Pronunciation', A: 85 },
     { subject: 'Vocabulary', A: 65 },
