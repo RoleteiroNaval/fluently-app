@@ -1,0 +1,162 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Fluently App - Dark Theme with Purple/Blue Gradients
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    /* Fluently Design Tokens */
+    --fluently-bg: 261 100% 10%; /* #1A0033 - Dark purple background */
+    --fluently-bg-dark: 268 100% 20%; /* #330066 - Darker purple for gradients */
+    --fluently-purple: 268 87% 43%; /* #6A0DAD - Primary purple */
+    --fluently-blue: 195 100% 50%; /* #00BFFF - Bright cyan/blue */
+    --fluently-text: 0 0% 100%; /* #FFFFFF - White text */
+    --fluently-text-muted: 0 0% 80%; /* #CCCCCC - Light gray text */
+    --fluently-error: 16 100% 50%; /* #FF4500 - Orange error */
+    --fluently-success: 120 61% 50%; /* #32CD32 - Green success */
+
+    /* Legacy theme variables for compatibility */
+    --background: 261 100% 10%;
+    --foreground: 0 0% 100%;
+
+    --card: 268 100% 20%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 268 100% 20%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 268 87% 43%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 195 100% 50%;
+    --secondary-foreground: 261 100% 10%;
+
+    --muted: 0 0% 30%;
+    --muted-foreground: 0 0% 80%;
+
+    --accent: 195 100% 50%;
+    --accent-foreground: 261 100% 10%;
+
+    --destructive: 16 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 268 100% 20%;
+    --input: 268 100% 20%;
+    --ring: 195 100% 50%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 261 100% 10%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 268 87% 43%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 195 100% 50%;
+    --sidebar-accent-foreground: 261 100% 10%;
+    --sidebar-border: 268 100% 20%;
+    --sidebar-ring: 195 100% 50%;
+  }
+
+  .dark {
+    --fluently-bg: 261 100% 10%;
+    --fluently-bg-dark: 268 100% 20%;
+    --fluently-purple: 268 87% 43%;
+    --fluently-blue: 195 100% 50%;
+    --fluently-text: 0 0% 100%;
+    --fluently-text-muted: 0 0% 80%;
+    --fluently-error: 16 100% 50%;
+    --fluently-success: 120 61% 50%;
+
+    --background: 261 100% 10%;
+    --foreground: 0 0% 100%;
+    --card: 268 100% 20%;
+    --card-foreground: 0 0% 100%;
+    --popover: 268 100% 20%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 268 87% 43%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 195 100% 50%;
+    --secondary-foreground: 261 100% 10%;
+    --muted: 0 0% 30%;
+    --muted-foreground: 0 0% 80%;
+    --accent: 195 100% 50%;
+    --accent-foreground: 261 100% 10%;
+    --destructive: 16 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 268 100% 20%;
+    --input: 268 100% 20%;
+    --ring: 195 100% 50%;
+    --sidebar-background: 261 100% 10%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 268 87% 43%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 195 100% 50%;
+    --sidebar-accent-foreground: 261 100% 10%;
+    --sidebar-border: 268 100% 20%;
+    --sidebar-ring: 195 100% 50%;
+  }
+
+  /* Fluently Gradient Utilities */
+  .bg-gradient-fluently {
+    background: linear-gradient(90deg, hsl(var(--fluently-purple)) 0%, hsl(var(--fluently-blue)) 100%);
+  }
+
+  .bg-gradient-fluently-vertical {
+    background: linear-gradient(180deg, hsl(var(--fluently-bg)) 0%, hsl(var(--fluently-bg-dark)) 100%);
+  }
+
+  .text-gradient-fluently {
+    background: linear-gradient(90deg, hsl(var(--fluently-purple)) 0%, hsl(var(--fluently-blue)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    @apply text-fluently-text;
+    font-family: "Inter", sans-serif;
+  }
+
+  h1 {
+    @apply text-4xl font-bold text-fluently-text;
+    font-size: 32px;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold text-fluently-text;
+    font-size: 24px;
+  }
+
+  h3 {
+    @apply text-xl font-semibold text-fluently-text;
+    font-size: 20px;
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+}
